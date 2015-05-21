@@ -1,0 +1,210 @@
+//  ZoidsQuest
+//  Copyright (C) 2004 Max Atkin <g_8pit@users.sourceforge.net>
+//
+//  This program is free software; you can redistribute it and/or
+//  modify it under the terms of the GNU General Public License
+//  as published by the Free Software Foundation; either version 2
+//  of the License, or (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program; if not, write to the Free Software
+//  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+//  02111-1307, USA.
+
+
+
+#include "main.h"
+#include "sound.h"
+#include "SDL.h"
+#include "parser.h"
+
+int OpenAudio(unsigned int audio_rate, unsigned int audio_format, unsigned int audio_channels, unsigned int audio_buffers){
+  if(SDL_InitSubSystem(SDL_INIT_AUDIO) < 0){
+    fprintf(stderr, "Could not initialize audio subsystem. Turning sound off...\n");
+    return Error;
+  }
+
+  if(Mix_OpenAudio(audio_rate, audio_format, audio_channels, audio_buffers)){
+    fprintf(stderr, "Unable to open audio! Turning sound off...\n");
+    return Error;
+  }
+  fprintf(stderr, "Got audio!\n");
+  return Ok;
+}
+
+void CloseAudio(){
+  Mix_CloseAudio();
+}
+
+//_________________________________________________________
+
+SoundContainer::~SoundContainer(){
+  map<string, struct sound_info *>::iterator i;
+  for(i = sounds.begin(); i != sounds.end(); i++){
+    delete (*i).second;
+  }
+}
+
+void SoundContainer::AddSample(char *name_, char *file){
+  string name = name_;
+  struct sound_info *new_sound = new struct sound_info;
+  InverseSoundMap[name] = file;
+  new_sound->sound = GameAudio::GameSounds.LoadSample(file);
+  if(new_sound->sound == NULL){
+    fprintf(stderr, "Failed to load sound %s\n", file);
+    return;
+  }
+  fprintf(stderr, "Loaded sound %s from %s\n", name_, file);
+  sounds[name] = new_sound;
+}
+
+string SoundContainer::Print(){
+  string output_str = "";
+  map<string, string>::iterator i;
+  map<string, string> argument;
+  for(i = InverseSoundMap.begin(); i != InverseSoundMap.end(); i++){
+    argument.clear();
+    argument["action"] = (*i).first;
+    output_str = output_str + PackageInXML("sound", &argument, Open_Tag, false)
+                 + (*i).second + PackageInXML("sound", NULL, Close_Tag, true);
+  }
+  return output_str;
+}
+
+void SoundContainer::GetMapEntry(unsigned int k, string *soundname, struct sound_info *retsnd){
+  map<string, struct sound_info *>::iterator i;
+  unsigned int j = 0;
+  for(i = sounds.begin(); i != sounds.end(); i++){
+    if(j == k){
+      *soundname = (*i).first;
+      retsnd->volume = (*i).second->volume;
+      (*retsnd).sound = (*i).second->sound;
+      return;
+    }
+    else j++;
+  }
+}
+
+void SoundContainer::CopySounds(SoundContainer *newSounds){
+  fprintf(stderr, "Copying sounds...p\n");
+  string name;
+  struct sound_info *new_sound;
+  for(unsigned int i = 0; i < newSounds->Number(); i++){
+    new_sound = new struct sound_info;
+    newSounds->GetMapEntry(i, &name, new_sound);
+    sounds[name] = new_sound;
+  }
+/*
+  map<string, struct sound_info *>::iterator i;
+  struct sound_info *new_sound;
+  string name;
+
+  for(i = newSounds->GetSounds()->begin(); i != newSounds->GetSounds()->end(); i++){
+    new_sound = new struct sound_info;
+    name = (*i).first;
+    new_sound->sound = (*i).second->sound;
+    sounds[name] = new_sound;
+  }
+*/
+  
+}
+
+sound_info *SoundContainer::operator[](string i){
+  if(sounds.find(i) == sounds.end()) return NULL;
+  return sounds[i];
+}
+
+//_________________________________________________________
+
+Mix_Chunk *Sounds::LoadSample(char *file){
+  if(file == NULL){
+    fprintf(stderr, "File name is NULL\n");
+    return NULL;
+  }
+
+  string filename = file;
+  if(SoundMap.find(filename) == SoundMap.end()){
+    char file_path[strlen(SOUND_BASE) + strlen(file)];
+    strcpy(file_path, SOUND_BASE);
+    strcat(file_path, file);
+
+    Mix_Chunk *new_effect = Mix_LoadWAV(file_path);
+    if(new_effect == NULL){
+      fprintf(stderr, "Couldn't load %s\n", file_path);
+      return NULL;
+    }
+    SoundMap[filename] = new_effect;
+  }
+  return SoundMap[filename];
+}
+
+/*
+char *Sounds::GetFilename(struct sound_info *sample){
+  if(InverseSoundMap.find(sample->sound) == InverseSoundMap.end()) return NULL;
+  return (char *)InverseSoundMap[sample->sound].c_str();
+}
+*/
+//_________________________________________________________
+
+GameAudio::GameAudio(){
+  volume = 1;
+  game_song = NULL;
+}
+
+GameAudio::~GameAudio(){
+
+}
+
+void GameAudio::AddToSampleQueue(struct sound_info *snd_info){
+  GameAudio::sample_queue.push_back(snd_info);
+}
+
+void GameAudio::PlayQueue(){
+  if(volume == MUTE) return;
+  for(unsigned int i = 0; i < GameAudio::sample_queue.size(); i++){
+    if(GameAudio::sample_queue[i] == NULL || GameAudio::sample_queue[i]->sound == NULL){
+      fprintf(stderr, "Warning: sound is NULL\n");
+      continue;
+    }
+    Mix_PlayChannel(-1, GameAudio::sample_queue[i]->sound, 0);
+  }
+  GameAudio::sample_queue.clear();
+}
+
+void GameAudio::SetVolume(unsigned int new_volume){
+  volume = new_volume;
+}
+
+void GameAudio::SetMusic(char *file){
+  if(file == NULL) return;
+  char file_path[strlen(SOUND_BASE)  + strlen(file)];
+  strcpy(file_path, SOUND_BASE);
+  strcat(file_path, file);
+
+  Mix_Music *new_song = Mix_LoadMUS(file_path);
+  if(new_song == NULL){
+    fprintf(stderr, "Unable to load music: %s\n", file);
+    return;
+  }
+  fprintf(stderr, "Loaded music %s!\n", file);
+  if(game_song != NULL) Mix_FreeMusic(game_song);
+  game_song = new_song;
+};
+
+void GameAudio::PlayMusic(){
+  if(volume == MUTE) return;
+  if(game_song == NULL){
+    fprintf(stderr, "Warning: song is NULL\n");
+    return;
+  }
+  fprintf(stderr, "Playing music...\n");
+  Mix_PlayMusic(game_song, -1);
+}
+
+Sounds GameAudio::GameSounds;
+vector<sound_info *> GameAudio::sample_queue;

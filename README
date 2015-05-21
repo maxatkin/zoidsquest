@@ -1,0 +1,50 @@
+                ---===+*Zoid's Quest*+===---
+
+Zoid's Quest is a game in the style of the classic jump-and-run console
+games. At the moment only a few levels exist, but hopefully as the versions
+progress more will be added.
+
+Game Play
+=========
+
+Zoid can attack enemies in two ways. The most basic way is to merely
+jump on to the enemies head, as is done in Mario type games. The second
+way involves the use of magic. Zoid can collect magic by collecting the
+blue liquid contained in vials that are scattered throughout the levels.
+
+The power bar in the left corner measures how magic Zoid has available to
+him. As he collects more vials the bar will grow in length. Once Zoid has
+enough magic a rune will appear and rotate about Zoid. As more magic is
+collected more runes will appear.
+
+These runes serve a number of purposes. Firstly, by holding the '.' key
+they can be used to attack; they will spin around Zoid faster and if an
+enemy comes into contact with them, it will be killed.
+
+Secondly, the runes are defensive. If Zoid is touched by an enemy while
+he has no magic he will die. However, if Zoid is touched while he has 
+runes, then only the number of runes will decrease.
+
+Spikes and holes in the ground will kill Zoid instantly regardless of the
+number of runes.
+
+
+Default controls
+=================
+
+  Walk left  - a
+  Walk right - d
+  Climb up   - w
+  Climb down - s
+  Jump       - Space bar
+  Magic attack - .
+  Rotate Runes - ,
+
+Level Editor
+============
+Level editor can be accessed via ./zoids-quest --lvledit <levelfile>. However
+note, this is not a finished program, and although useful manual editing of 
+the level.xml file is still needed in order to set enemies initial velocity and
+set complex routes of moving blocks.
+  
+

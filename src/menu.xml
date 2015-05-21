@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<menus>
+  <menubg>menubg.png</menubg>
+  <openingbg>newback2.png</openingbg>
+  <openingmusic>Game1.mp3</openingmusic>
+
+  <page name = "title screen" title = "Game Title" titletype = "big">
+      <entry name = "Start Game">
+        <action type = "start game"/>
+      </entry>
+      <entry name = "Options">
+        <action type = "goto page">options</action>
+      </entry>
+      <entry name = "Quit">
+        <action type = "quit"/>
+      </entry>
+  </page>
+
+  <page name = "options" title = "Options" titletype = "small">
+      <entry name = "Start Game">
+        <action type = "start game"/>
+      </entry>
+      <entry name = "Options">
+        <action type = "goto page">options</action>
+      </entry>
+      <entry name = "Return">
+        <action type = "goto page">title screen</action>
+      </entry>
+  </page>
+</menus>

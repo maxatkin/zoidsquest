@@ -1,0 +1,450 @@
+//  ZoidsQuest
+//  Copyright (C) 2004 Max Atkin <g_8pit@users.sourceforge.net>
+//
+//  This program is free software; you can redistribute it and/or
+//  modify it under the terms of the GNU General Public License
+//  as published by the Free Software Foundation; either version 2
+//  of the License, or (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program; if not, write to the Free Software
+//  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+//  02111-1307, USA.
+
+
+
+#include "game.h"
+
+GameWrapper::~GameWrapper(){
+  if(CurrentLevel != NULL) delete CurrentLevel;
+}
+
+int GameWrapper::Init(){
+  if(Screen.Init() == Error) return Error;
+  if(OpenAudio(22050, AUDIO_S16, 2, 2048) == Error) Audio.SetVolume(MUTE);
+
+  fprintf(stderr, "Loading global templates\n");
+  if(LoadGlobalTemplates("game.xml") == Error) return Error;
+  CurrentLevel = NULL;
+
+  controls["climb up"] = 'w';
+  controls["climb down"] = 's';
+  controls["left"] = 'a';
+  controls["right"] = 'd';
+  controls["jump"] = SDLK_SPACE;
+  controls["attack"] = '.';
+  controls["scroll"] = ',';
+
+  Menu.Create(&controls);
+  finished = False;
+  started_game = False;
+  mode = MENU;
+
+  return Ok;
+}
+
+int GameWrapper::InitGame(){
+  return Ok;
+}
+
+int GameWrapper::LoadGlobalTemplates(char *gamefile){
+  Parser GlobalParser;
+  BaseObject *template_ptr;
+  string class_type;
+  char *element_data;
+  int tilesize, blocksize;
+ 
+
+  if(GlobalParser.LoadData(gamefile, "game") == Error) return Error;
+
+  if(GlobalParser.FindElement("blocksize") == Error){
+    fprintf(stderr, "Level blocksize not specified\n");
+    return Error;
+  }
+  element_data = GlobalParser.GetElementData();
+  if(element_data == NULL){
+    fprintf(stderr, "No blocksize specified\n");
+    return Error;
+  }
+  blocksize = atoi(element_data);
+
+  if(GlobalParser.FindElement("tilesize") == Error){
+    fprintf(stderr, "Level tilesize not specified\n");
+    return Error;
+  }
+  element_data = GlobalParser.GetElementData();
+  if(element_data == NULL){
+    fprintf(stderr, "No tilesize specified\n");
+    return Error;
+  }
+  tilesize = atoi(element_data);
+  double scale = ((double)blocksize)/((double)tilesize); 
+  BaseObject::SetScale(scale);
+  Level::SetScale(blocksize, tilesize);
+
+
+  while(GlobalParser.FindElement("level") == Ok){
+    char *levelfile = GlobalParser.GetElementData();
+    if(levelfile == NULL){
+      fprintf(stderr, "No level specified in <level> tag");
+      return Error;
+    }
+    AddLevel(GlobalParser.GetElementData());
+  }
+
+  if(GlobalParser.FindElement("menu") == Ok){
+    GlobalParser.EnterElement();
+    if(GlobalParser.FindElement("logo") == Ok){
+      element_data = GlobalParser.GetElementData();
+      if(element_data != NULL) Menu.SetLogo(element_data);
+    }
+    if(GlobalParser.FindElement("openingmusic") == Ok){
+      element_data = GlobalParser.GetElementData();
+      if(element_data != NULL) Menu.SetMusic(element_data);
+    }
+    if(GlobalParser.FindElement("menubg") == Ok){
+      element_data = GlobalParser.GetElementData();
+      if(element_data != NULL) Menu.SetMenuBackGround(element_data);
+    }
+    if(GlobalParser.FindElement("openingbg") == Ok){
+      element_data = GlobalParser.GetElementData();
+      if(element_data != NULL) Menu.SetOpeningBackGround(element_data);
+    }
+    GlobalParser.ExitElement();
+  }
+
+  while(GlobalParser.FindElement("template") == Ok){
+    class_type = GlobalParser.GetElementAttribute("class");
+
+    if(class_type == "MovingGroundObject") template_ptr = new MovingGroundObject;
+    else if(class_type == "EnemyGroundObject") template_ptr = new EnemyGroundObject;
+    else if(class_type == "MovingFlyingObject") template_ptr = new MovingFlyingObject;
+    else if(class_type == "FallingBlock") template_ptr = new FallingBlock;
+    else if(class_type == "RuneObject") template_ptr = new RuneObject;
+    else if(class_type == "HUDObject") template_ptr = new HUDObject;
+    else if(class_type == "PowerBar") template_ptr = new PowerBar;
+    else if(class_type == "ManaJar") template_ptr = new ManaJar;
+    else if(class_type == "Player") template_ptr = new PlayerObject;
+    else{
+      fprintf(stderr, "None valid class specified for object: %s\n", class_type.c_str());
+      return Error;
+    }
+    template_ptr->SetClassType(class_type.c_str());
+
+    GlobalParser.EnterElement();
+
+    if(GlobalParser.FindElement("name") == Error) return Error;
+    element_data = GlobalParser.GetElementData();
+    if(element_data == NULL){
+      fprintf(stderr, "No name specified in template\n");
+      return Error;
+    }
+    string name = element_data;
+    global_templates[name] = template_ptr;
+    template_ptr->SetName(element_data);
+
+    bool boundary_exists = false;
+    while(GlobalParser.FindElement("boundary") == Ok){
+      char *modename = GlobalParser.GetElementAttribute("mode");
+      double x0 = 0, y0 = 0, x1 = 0, y1 = 0;
+      boundary_exists = true;
+      if(GlobalParser.GetElementAttribute("x0") != NULL) x0 = atof(GlobalParser.GetElementAttribute("x0"));
+      if(GlobalParser.GetElementAttribute("y0") != NULL) y0 = atof(GlobalParser.GetElementAttribute("y0"));
+      if(GlobalParser.GetElementAttribute("x1") != NULL) x1 = atof(GlobalParser.GetElementAttribute("x1"));
+      if(GlobalParser.GetElementAttribute("y1") != NULL) y1 = atof(GlobalParser.GetElementAttribute("y1"));
+      fprintf(stderr, "added boundary: %s", modename);
+      if(modename == NULL) template_ptr->BoundaryModes.Add("default", x0, y0, x1, y1);
+      else template_ptr->BoundaryModes.Add(modename, x0, y0, x1, y1);
+    }
+    if(!boundary_exists){
+      fprintf(stderr, "No boundary specified in template\n");
+      return Error;
+    }
+
+    while(GlobalParser.FindElement("property") == Ok){
+      element_data = GlobalParser.GetElementData();
+      if(element_data == NULL){
+        fprintf(stderr, "Warning: no property specified in <property> tag\n");
+        continue;
+      }
+      template_ptr->Properties.SetProperty(element_data);
+    }
+
+    while(GlobalParser.FindElement("sound") == Ok){
+      char *sound_name = GlobalParser.GetElementAttribute("action");
+      if(sound_name == NULL){
+        fprintf(stderr, "Warning: no name for sound specified in <sound> tag\n");
+        continue;
+      }
+      element_data = GlobalParser.GetElementData();
+      if(element_data == NULL){
+        fprintf(stderr, "Warning: no sound file specified in <sound> tag\n");
+        continue;
+      }
+      fprintf(stderr, "Adding sound %s\n", sound_name);
+      template_ptr->SoundEffects.AddSample(sound_name, element_data);
+    }
+
+    while(GlobalParser.FindElement("animation") == Ok){
+      char *animation_name = GlobalParser.GetElementAttribute("name");
+      if(animation_name == NULL) continue;
+      template_ptr->SpriteAnimation.Create(animation_name);
+      GlobalParser.EnterElement();
+      while(GlobalParser.FindElement("frame") == Ok){
+        char *repeat_number = GlobalParser.GetElementAttribute("repeat");
+        int repeat = 1;
+        if(repeat_number != NULL) repeat = atoi(repeat_number);
+        element_data = GlobalParser.GetElementData();
+        if(element_data == NULL){
+          fprintf(stderr, "Warning: no image specified in <frame> tag\n");
+          continue;
+        }
+        if(template_ptr->SpriteAnimation.AddImageTo(animation_name, element_data, repeat) == Error) return Error;
+      }
+      GlobalParser.ExitElement();
+    }
+
+    while(GlobalParser.FindElement("magic") == Ok){
+      GlobalParser.EnterElement();
+      while(GlobalParser.FindElement("rune") == Ok){
+        char *rune_name = GlobalParser.GetElementData();
+        if(global_templates.find(rune_name) == global_templates.end()){
+          fprintf(stderr, "Rune '%s' not defined\n", rune_name);
+          continue;
+        }
+        ((MagicObject *)template_ptr)->Magic.AddRune(rune_name, (RuneObject *)global_templates[rune_name]);
+      }
+      GlobalParser.ExitElement();
+    }
+    GlobalParser.ExitElement();
+  }
+
+  while(GlobalParser.FindElement("hud") == Ok){
+    GlobalParser.EnterElement();
+
+    if(GlobalParser.FindElement("powerbar") == Ok){
+      char *powerbar = GlobalParser.GetElementData();
+      if(powerbar != NULL){
+        string str_powerbar = powerbar;
+        if(global_templates.find(str_powerbar) != global_templates.end()){
+          if(Hud.SetPowerBar((PowerBar *)global_templates[powerbar]) == Error){
+            fprintf(stderr, "Invalid powerbar: %s", powerbar);
+            return Error;
+          }
+        }
+      }
+    }
+
+    while(GlobalParser.FindElement("font") == Ok){
+      char *fontfile = GlobalParser.GetElementData();
+      char *fontname = GlobalParser.GetElementAttribute("name");
+      if(Font.Load(fontname, fontfile) == Error){
+        fprintf(stderr, "Invalid font: %s", fontfile);
+        return Error;
+      }
+    }
+  }
+  return Ok;
+}
+
+int GameWrapper::NewGame(){ 
+  started_game = True;
+  if(SetLevel(0) == Error) return Error;
+  return Ok;
+}
+
+int GameWrapper::SetLevel(unsigned int level){
+  if(level > Levelfiles.size() - 1) return Error;
+
+  if(CurrentLevel != NULL) delete CurrentLevel;
+  CurrentLevel = new Level;
+  if(CurrentLevel->Load(Levelfiles[level].c_str(), &global_templates) == Error) return Error;
+  level_number = level;
+  Audio.SetMusic(CurrentLevel->Music());
+  Audio.PlayMusic();
+  return Ok;
+}
+
+int GameWrapper::AdvanceLevel(){
+  int lives = CurrentLevel->Player->Lives();
+  int score = CurrentLevel->Player->Score();
+  double mana  = CurrentLevel->Player->Magic.GetMana();
+  if(CurrentLevel != NULL) delete CurrentLevel;
+  level_number++;
+  if(level_number > Levelfiles.size() - 1) level_number = 0;
+  CurrentLevel = new Level;
+  if(CurrentLevel->Load(Levelfiles[level_number].c_str(), &global_templates) == Error) return Error;
+  CurrentLevel->Player->SetScore(score);
+  CurrentLevel->Player->SetLives(lives);
+  CurrentLevel->Player->Magic.SetMana(mana);
+  Audio.SetMusic(CurrentLevel->Music());
+  Audio.PlayMusic();
+  return Ok;
+}
+
+int GameWrapper::AddLevel(char *lvlfile){
+  if(lvlfile == NULL) return Error;
+  string levelfile = lvlfile;
+  Levelfiles.push_back(levelfile);
+  return Ok;
+}
+
+int GameWrapper::SetMode(char *setmode_){
+  string setmode = setmode_;
+  if(setmode == "pause"){
+    mode = MENU;
+    Menu.SetPage("pause");
+  }
+  else if(setmode == "intro"){
+    mode = MENU;
+    started_game = False;
+    Menu.SetPage("start page");
+    Audio.SetMusic(Menu.GetMusic());
+    Audio.PlayMusic();
+  }
+  else if(setmode == "continue"){
+    mode = GAME;
+  }
+  else if(setmode == "start game"){
+    mode = GAME;
+    if(NewGame() == Error) return Error;
+  }
+  else if(setmode == "editor"){
+    mode = EDITOR;
+    if(Editor.LoadToEdit(&global_templates) == Error) return Error;
+    Editor.Init(0.25);
+  }
+  return Ok;
+}
+
+int GameWrapper::Update(){
+/*
+  char text_buf[32];
+  UserInput.Check();
+  if(UserInput.IsKeyDown(SDLK_ESCAPE) == True){
+    SetMode("pause");
+    return Ok;
+  }
+  if(CurrentLevel->Player->Lives() < 1){
+    SetMode("intro");
+    return Ok;
+  }
+  if(UserInput.IsKeyDown(SDLK_F1) == True) Screen.ToggleFullScreen();
+  if(CurrentLevel->Player->Properties.HasProperty("dying") == False){
+    if(UserInput.IsKeyHeld(controls["climb up"])   == True) CurrentLevel->Player->ClimbUp();
+    if(UserInput.IsKeyHeld(controls["climb down"]) == True) CurrentLevel->Player->ClimbDown();
+    if(UserInput.IsKeyHeld(controls["left"])       == True) CurrentLevel->Player->Left();
+    if(UserInput.IsKeyHeld(controls["right"])      == True) CurrentLevel->Player->Right();
+    if(UserInput.IsKeyHeld(controls["scroll"])     == True) CurrentLevel->Player->Magic.ScrollRunesLeft();
+    if(UserInput.IsKeyHeld(controls["attack"])     == True) CurrentLevel->Player->MagicAttack();
+    if(UserInput.IsKeyHeld(controls["jump"])       == True) CurrentLevel->Player->Jump();
+    if(UserInput.IsKeyDown('q') == True){
+      if(AdvanceLevel() == Error) return Error;
+    }
+    if(CurrentLevel->Player->Properties.HasProperty("Finished level")){
+      if(AdvanceLevel() == Error) return Error;
+    }
+  }
+*/
+  //Audio.PlayQueue();
+  CurrentLevel->Update();
+  //if(CurrentLevel->Reset()) return Ok;
+  //sprintf(text_buf, "lives: %i", CurrentLevel->Player->Lives());
+  //Text::Print("white", text_buf, 520, 10);
+  //Text::Print("white", "mana", 10, 10);
+
+  //Hud.ManaBar.SetPercentage(CurrentLevel->Player->Magic.GetManaPercentage());
+
+  CurrentLevel->Draw(&Screen);
+  //Hud.Draw(&Screen);
+  Screen.Update();
+  return Ok;
+}
+
+int GameWrapper::UpdateMenu(){
+  UserInput.Check();
+  if(UserInput.IsKeyDown(SDLK_F1) == True) Screen.ToggleFullScreen();
+  if(UserInput.IsKeyDown(SDLK_ESCAPE) == True){
+    if(Menu.GotoLastPage() == False){
+      if(started_game) SetMode("continue");
+      else finished = True;
+      return Ok;
+    }
+  }
+  unsigned int *change_key = Menu.ChangeKey();
+  if(change_key != NULL){
+    if(UserInput.GetAnyInput()){
+      *change_key = UserInput.GetAnyInput();
+      Menu.ClearChangeKey();
+    }
+  }
+  else{
+    unsigned int mx = 0, my = 0;
+    UserInput.GetMouseCoords(mx, my);
+    if(UserInput.HasMouseMoved() == True) Menu.CurrentPage()->SetEntryWithMouse(mx, my);
+    if(UserInput.IsMouseButtonDown(0) == True && Menu.CurrentPage()->MouseOnEntry()){
+      Menu.CurrentPage()->SetEntryWithMouse(mx, my);
+      Menu.CurrentPage()->ExecuteEntry();
+    }
+    if(UserInput.IsKeyDown(SDLK_RETURN) == True) Menu.CurrentPage()->ExecuteEntry();
+    if(UserInput.IsKeyDown(SDLK_UP) == True) Menu.CurrentPage()->LastEntry();
+    if(UserInput.IsKeyDown(SDLK_DOWN) == True) Menu.CurrentPage()->NextEntry();
+  }
+
+  Menu.Update();
+  if(Menu.CurrentPage()->ExecuteFlag()){
+    menuEntry *execute_data = Menu.CurrentPage()->GetExectueData();
+    if(execute_data->Action() == "start"){
+      if(SetMode("start game") == Error) return Error;
+    }
+    else if(execute_data->Action() == "continue") SetMode("continue");
+    else if(execute_data->Action() == "quit") finished = True;
+    Menu.CurrentPage()->ClearExecuteFlag();
+  }
+
+  bool draw_background = true;
+  bool draw_logo = true;
+  if(started_game){
+    CurrentLevel->Draw(&Screen);
+    draw_background = false;
+    draw_logo = false;
+  }
+  Menu.Draw(&Screen, draw_background, draw_logo);
+
+  Screen.Update();
+  return Ok;
+}
+
+int GameWrapper::UpdateEditor(){
+  unsigned int mx = 0, my = 0;
+  UserInput.Check();
+  UserInput.GetMouseCoords(mx, my);
+  Editor.SetMousePosition(mx, my);
+  if(UserInput.IsKeyDown(SDLK_F1) == True) Screen.ToggleFullScreen();
+  if(UserInput.IsKeyDown(SDLK_ESCAPE) == True){
+    finished = True;
+    return Ok;
+  }
+  if(UserInput.IsKeyDown('p') == True){
+    fprintf(stderr, "Saving to file\n");
+    Editor.Write();
+  }
+  if(UserInput.IsKeyHeld(controls["climb up"])   == True) Editor.MoveViewWindow(0,-10);
+  if(UserInput.IsKeyHeld(controls["climb down"]) == True) Editor.MoveViewWindow(0,10);
+  if(UserInput.IsKeyHeld(controls["left"])       == True) Editor.MoveViewWindow(-10,0);
+  if(UserInput.IsKeyHeld(controls["right"])      == True) Editor.MoveViewWindow(10,0);
+  if(UserInput.IsKeyDown('.') == True) Editor.ChangeType();
+  if(UserInput.IsMouseButtonDown(0)) Editor.ClickMouse(0);
+  Editor.Update();
+  Editor.Draw(&Screen);
+  Screen.Update();
+  return Ok;
+}
+
+
+

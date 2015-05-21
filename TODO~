@@ -1,0 +1,24 @@
+As of 26/10/2004 the following are required:
+
+*Graphics need improving, particularly tiles-sets
+*More levels are required
+*More enemies are required
+*Spells associated with each rune must be implemented
+-- Main spell needed 'far sight' that will allow the player
+   to view parts of the levels without travelling there. This
+   would allow players to look down pits before jumping. Of course
+   the further you look the magic it would use up
+
+*More music needs to be written
+*Level editor needs to be improved
+*Improve water code
+*Add crouch
+*Add end level sequence
+*Fix menu cpu bug
+*Fix enemy merge bug
+*Fix double sound effect bug
+*Change sprites to only use alpha when they have to
+*Write proper setup code; i.e ~/.zoidquest type stuff
+
+
+

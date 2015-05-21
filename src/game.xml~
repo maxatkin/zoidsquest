@@ -1,0 +1,285 @@
+<?xml version="1.0"?>
+<!-- HIS NAME WAS ZODE -->
+<game>
+
+  <blocksize>50</blocksize> <!--Distance units per tile-->
+  <tilesize>40</tilesize> <!--Size of tiles in pixels-->
+
+  <level>level.xml</level>
+  <level>level4.xml</level>
+  <level>level5.xml</level>
+  <level>level6.xml</level>
+
+  <menu>
+    <logo>logo.png</logo>
+    <openingmusic>Game1.mp3</openingmusic>
+    <openingbg>newback2.png</openingbg>
+    <menubg>menubg.png</menubg>
+  </menu>
+
+  <template class = 'RuneObject'>
+    <name>defend1</name>
+    <boundary x0 = '0' y0 = '0' x1 = '25' y1 = '25'/>
+    <property>defend</property>
+    <property>level1</property>
+    <property>rune</property>
+    <animation name = 'default'>
+      <frame>d1.png</frame>
+    </animation>
+    <animation name = 'killer'>
+      <frame>kd1.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'RuneObject'>
+    <name>defend2</name>
+    <boundary x0 = '0' y0 = '0' x1 = '12.5' y1 = '12.5'/>
+    <property>defend</property>
+    <property>level2</property>
+    <property>rune</property>
+    <animation name = 'default'>
+      <frame>d2.png</frame>
+    </animation>
+    <animation name = 'killer'>
+      <frame>kd2.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'RuneObject'>
+    <name>defend3</name>
+    <boundary x0 = '0' y0 = '0' x1 = '25' y1 = '25'/>
+    <property>defend</property>
+    <property>level3</property>
+    <property>rune</property>
+    <animation name = 'default'>
+      <frame>d3.png</frame>
+    </animation>
+    <animation name = 'killer'>
+      <frame>kd3.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'RuneObject'>
+    <name>vlinkerd</name>
+    <boundary x0 = '0' y0 = '0' x1 = '25' y1 = '25'/>
+    <property>defend</property>
+    <property>linker</property>
+    <property>rune</property>
+    <animation name = 'default'>
+      <frame>vld.png</frame>
+    </animation>
+    <animation name = 'killer'>
+      <frame>kvld.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'RuneObject'>
+    <name>hlinkerd</name>
+    <boundary x0 = '0' y0 = '0' x1 = '25' y1 = '25'/>
+    <property>defend</property>
+    <property>linker</property>
+    <property>rune</property>
+    <animation name = 'default'>
+      <frame>hld.png</frame>
+    </animation>
+    <animation name = 'killer'>
+      <frame>khld.png</frame>
+    </animation>
+  </template>
+
+<template class = 'RuneObject'>
+    <name>attack1</name>
+    <boundary x0 = '0' y0 = '0' x1 = '25' y1 = '30'/>
+    <property>attack</property>
+    <property>level1</property>
+    <property>rune</property>
+    <animation name = 'default'>
+      <frame>a1.png</frame>
+    </animation>
+    <animation name = 'killer'>
+      <frame>ka1.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'RuneObject'>
+    <name>attack2</name>
+    <boundary x0 = '0' y0 = '0' x1 = '25' y1 = '30'/>
+    <property>attack</property>
+    <property>level2</property>
+    <property>rune</property>
+    <animation name = 'default'>
+      <frame>a2.png</frame>
+    </animation>
+    <animation name = 'killer'>
+      <frame>ka2.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'RuneObject'>
+    <name>attack3</name>
+    <boundary x0 = '0' y0 = '0' x1 = '25' y1 = '30'/>
+    <property>attack</property>
+    <property>level3</property>
+    <property>rune</property>
+    <animation name = 'default'>
+      <frame>a3.png</frame>
+    </animation>
+    <animation name = 'killer'>
+      <frame>ka3.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'RuneObject'>
+    <name>vlinkera</name>
+    <boundary x0 = '0' y0 = '0' x1 = '25' y1 = '25'/>
+    <property>attack</property>
+    <property>linker</property>
+    <property>rune</property>
+    <animation name = 'default'>
+      <frame>vla.png</frame>
+    </animation>
+    <animation name = 'killer'>
+      <frame>kvla.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'RuneObject'>
+    <name>hlinkera</name>
+    <boundary x0 = '0' y0 = '0' x1 = '25' y1 = '25'/>
+    <property>attack</property>
+    <property>linker</property>
+    <property>rune</property>
+    <animation name = 'default'>
+      <frame>hla.png</frame>
+    </animation>
+    <animation name = 'killer'>
+      <frame>khla.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'PowerBar'>
+    <name>manabar</name>
+    <boundary x0 = '0' y0 = '0' x1 = '50' y1 = '50'/>
+    <animation name = 'default'>
+      <frame>manabar.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'ManaJar'>
+    <name>manajar</name>
+    <boundary x0 = '0' y0 = '0' x1 = '50' y1 = '50'/>
+    <property>givemagic</property>
+    <animation name = 'default'>
+      <frame>smana.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'Player'>
+    <name>player</name>
+    <boundary x0 = '13' y0 = '2' x1 = '37' y1 = '100'/>
+    <boundary mode = 'crouching' x0 = '13' y0 = '50' x1 = '37' y1 = '100'/>    
+    <property>heavy</property>
+    <property>solid</property>
+    <property>magic</property>
+    <property>stoppable</property>
+    <property>player</property>
+
+    <magic>
+      <rune>defend1</rune>
+
+      <rune>defend2</rune>
+      <rune>defend3</rune>
+      <rune>vlinkerd</rune>
+      <rune>hlinkerd</rune>
+      <rune>attack1</rune>
+      <rune>attack2</rune>
+      <rune>attack3</rune>
+      <rune>vlinkera</rune>
+      <rune>hlinkera</rune>
+    </magic>
+
+    <sound action = "jump">jump.wav</sound>
+    <sound action = "hurt">hurt.wav</sound>
+    <sound action = "die">Death1.wav</sound>
+    <sound action = "getmagic">distro.wav</sound>
+
+    <animation name = 'crouching_right'>
+      <frame repeat = '3'>crouch.png</frame>
+    </animation>
+
+    <animation name = 'crouching_left'>
+      <frame repeat = '3'>lcrouch.png</frame>
+    </animation>
+
+    <animation name = 'right'>
+      <frame repeat = '3'>idea4.png</frame>
+      <frame repeat = '3'>idea7.png</frame>
+      <frame repeat = '3'>idea5.png</frame>
+      <frame repeat = '3'>idea8.png</frame>
+      <frame repeat = '3'>idea6.png</frame>
+    </animation>
+
+    <animation name = 'left'>
+      <frame repeat = '3'>idea4l.png</frame>
+      <frame repeat = '3'>idea7l.png</frame>
+      <frame repeat = '3'>idea5l.png</frame>
+      <frame repeat = '3'>idea8l.png</frame>
+      <frame repeat = '3'>idea6l.png</frame>
+    </animation>
+
+    <animation name = 'attack_right'>
+      <frame repeat = '3'>eidea4.png</frame>
+      <frame repeat = '3'>eidea7.png</frame>
+      <frame repeat = '3'>eidea5.png</frame>
+      <frame repeat = '3'>eidea8.png</frame>
+      <frame repeat = '3'>eidea6.png</frame>
+    </animation>
+
+    <animation name = 'attack_left'>
+      <frame repeat = '3'>eidea4l.png</frame>
+      <frame repeat = '3'>eidea7l.png</frame>
+      <frame repeat = '3'>eidea5l.png</frame>
+      <frame repeat = '3'>eidea8l.png</frame>
+      <frame repeat = '3'>eidea6l.png</frame>
+    </animation>
+
+    <animation name = 'dying'>
+      <frame>dying.png</frame>
+    </animation>
+
+    <animation name = 'standing_right'>
+      <frame>idea3.png</frame>
+    </animation>
+
+    <animation name = 'standing_left'>
+      <frame>idea3l.png</frame>
+    </animation>
+
+    <animation name = 'standing_attack_right'>
+      <frame>eidea3.png</frame>
+    </animation>
+
+    <animation name = 'standing_attack_left'>
+      <frame>eidea3l.png</frame>
+    </animation>
+
+    <animation name = 'jump_right'>
+      <frame>jump.png</frame>
+    </animation>
+
+    <animation name = 'jump_left'>
+      <frame>jumpl.png</frame>
+    </animation>
+
+    <animation name = 'climbing'>
+      <frame repeat = '3'>climb1.png</frame>
+      <frame repeat = '3'>climb2.png</frame>
+    </animation>
+  </template>
+
+  <hud>
+    <powerbar>manabar</powerbar>
+    <font name = "white">font2.png</font>
+    <font name = "blue">font3.png</font>
+  </hud>
+</game>

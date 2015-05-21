@@ -1,0 +1,685 @@
+<?xml version="1.0"?>
+<level>
+<name>
+</name>
+<name>
+</name>
+<width>
+422</width>
+<height>
+20</height>
+<blocksize>
+50</blocksize>
+<tilesize>
+40</tilesize>
+<music>
+gamemusic.mp3</music>
+<background>newback2.png</background><layout>.....................................................................................................................................................................................................................................tuuuuuuuuuuuuuutuu........................uuuuu..........................................L.......................................................................................................
+....................................................................................uu..........................................................................................uuu..................................................t.v.v.v.v...v.vt...........................v..v..........................................L.......................................................................................................
+........................................................................uuu.........vv....................................................................................uuuu...v...................................................t.v.........v.vt...........t...............v..v..........................................L.......................................................................................................
+...........................................................tvuuuuu......v.v...uuu...v..............................................................................tuuuuu.v.vv...v...................................................t.v.........v.vtuuu........v...............v..v..........................................L.......................................................................................................
+...........................................uvuut...........tv..v.v......v.v...vvv...v..............................................................................t..vv..v..v...v...................................................t...........v..v..v........v.............v....v..........................................L.......................................................................................................
+............................................v.vt...........tv....v......v.....v.v...v..1uuuuuuuuuu1.............................................................uuutu.v...v......v...................................................t...........v.....v........v........v....v..t.v..........................................L.......................................................................................................
+............................................v.vt...........tv....v.111..v.....v.....v..v...vv..vv.v...1uuuuuuuuuuuu1..1FFFF1....................................vv.tv.v..........v...................................................tF1FF1.v....v..............v........vv...v..t.v..........................................L.......................................................................................................
+............................................v.vt...........ttu.....v....v.....v.....v..v...v....v.....vv.v.v..v..v.v..tfffft....................................v..tv................................................................tffff21v....v..............v.uuuuutssssssssst.v..........................................L.......................................................................................................
+...........................................utuvt...........t.v.....v....v...........v......v..........v..v.v..v..v.v..tfffft....................................v..tv.......................uu...u...utu.............................tffffffv....v..uuu...uu....v......t222222222t.v..........................................L.......................................................................................................
+..............................................vt...........t.v.....v.......................v..........v....v.....v....v1fffv....................................v...................111......v...v...vv....1.........................tffffffv....v..v.v....v....v................v.v..........................................L.......................................................................................................
+........................................v.....vtuuu..v..uuut.......v..................................................vffffv....................................v....................t.......v.......v..............................111fffffv....v..v......v....v..................v..........................................L.......................................................................................................
+........................................v.....vt..v..v..v.vt.......v..................................................vffff.....................................vuuu.................t.......v..............v........................vfffff1tu1..v..v......v.uuut....................................v........................L.......................................................................................................
+........................................v.....vt..v..v.....t.......v..................................................vff1f.....................................vv.t.....111uu.......t......................v........................vfff1fft....v.........v.........................................v....................uuuuuuuuu...................................................................................................
+........................................v.....vt.....v.....t.......v..................................................vffff......................................v.tuuuuuut..........t......................v..................v.....vf1fffft....v.........v.........................................v111...1...1...1...111v..v.v111..................................................................................................
+........................................v.....vt.....v.....t.......v...v................uuu...........................vffff...................v..................v.tvv..v.t..........t......................v..................v.....v1ffffft....v.........v.........................11111...........v.t.................t.v....v.t...................................................................................................
+.............v....................v....vv......t.....v.....t.......v...v.....tuuuutu..uu2.............................vf1ff...................v..................v.t.v....tuu........t......................v.........v........v..v..vfffffft..............v......................t....tuuuuuutuuuuuutut.................t......v.t...................................................................................................
+.....v.......v...................vv....vv......t.....v.............v...vv..uttvv.vt...v.2uuuu...v.....................vffff.......v...........v.v...........v......t......t.......uuut......................v.........v......v.vv.v.tvfffffft..................................t..t....tvv..t.v...vv...t.................t........t...................................................................................................
+.v...v....v.vv....tuuuuuuuuuuuussss.v..vv...s..t.....v.............tsssst....tv...t.....2..vv.v.v....v..v..............ffff.......v111FFF1FFFsssv...v.v.....v..v...t......t...v.....vv......................v.........vv.v.tsssssssstvfffffft........uuu....................t..t..t...utv...t.v...v....t.................t........t...................................................................................................
+ssssssssssssssssss2.v....v....2qqqqssssss...qsst111..v..111u.u..1..tqqqqt....t....t.....2ssssssss....vvssswwwwwwwwwwwwwWWWWwwwwwwwssssfff2fffqqqsFFFssvv....v.vv...t......t...vv..v..v.....................vv...v..tssssssstqqqqqqqqtwWWWWWWtwwwwwwwwwwwwwwtwwwwwwwwwwwww1..t..t..t...vt....t.....v....t.................t........t...................................................................................................
+qqqqqqqqqqqqqqqqqq2wwwwwwwwwww2qqqqqqqqqq...qqqtssssssssssst.t..2..tttttt....t....t.....2qqqqqqqqssssssqqqqqqqqqWWWWWWWWW1WWWWWWWWqqqqfff2fffqqqqfffqqssssssssssssst......tssssssssswwww1wwwwww1wwwwwwwwwwtsssssssstqqqqqqqtqqqqqqqqtWWWWWWWtWWWWWWWWWWWWWqtWWWWWWWWWWWWW2..t..t..t....t....t..........t.................t............................................................................................................
+</layout><template class = "BulletObject">
+<name>badfruit</name>
+<boundary x0 = "0.000000" x1 = "25.000000" y0 = "0.000000" y1 = "25.000000"/>
+<property>heavy</property>
+<property>bullet</property>
+<animation name = "default">
+<frame repeat = "1">sfruit.png</frame>
+</animation>
+</template>
+<template class = "BlockObject">
+<name>block</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "0.000000" y1 = "50.000000"/>
+<property>solid</property>
+<property>unstoppable</property>
+<animation name = "default">
+<frame repeat = "1">brick1.png</frame>
+</animation>
+<blockkey>1</blockkey>
+</template>
+<template class = "BlockObject">
+<name>block2</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "0.000000" y1 = "50.000000"/>
+<property>solid</property>
+<property>unstoppable</property>
+<animation name = "default">
+<frame repeat = "1">brick2.png</frame>
+</animation>
+<blockkey>2</blockkey>
+</template>
+<template class = "FallingBlock">
+<name>fallingblock</name>
+<boundary x0 = "1.000000" x1 = "49.000000" y0 = "0.000000" y1 = "50.000000"/>
+<property>solid</property>
+<property>unstoppable</property>
+<animation name = "default">
+<frame repeat = "1">brick.jpg</frame>
+</animation>
+</template>
+<template class = "BlockObject">
+<name>finish</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "0.000000" y1 = "50.000000"/>
+<property>finish</property>
+<blockkey>L</blockkey>
+</template>
+<template class = "MovingGroundObject">
+<name>flag</name>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "0.000000" y1 = "50.000000"/>
+<property>finish</property>
+<animation name = "default">
+<frame repeat = "1">finish.png</frame>
+</animation>
+</template>
+<template class = "MovingGroundObject">
+<name>heavyblock</name>
+<boundary x0 = "1.000000" x1 = "49.000000" y0 = "1.000000" y1 = "49.000000"/>
+<property>solid</property>
+<property>sticky</property>
+<property>unstoppable</property>
+<property>heavy</property>
+<animation name = "default">
+<frame repeat = "1">brick.jpg</frame>
+</animation>
+</template>
+<template class = "BlockObject">
+<name>htree</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "19.000000" y1 = "50.000000"/>
+<property>solid</property>
+<property>unstoppable</property>
+<animation name = "default">
+<frame repeat = "1">hwood.png</frame>
+</animation>
+<blockkey>u</blockkey>
+</template>
+<template class = "BlockObject">
+<name>ladder</name>
+<layer>0</layer>
+<boundary x0 = "22.000000" x1 = "27.000000" y0 = "0.000000" y1 = "50.000000"/>
+<property>climbable</property>
+<animation name = "default">
+<frame repeat = "1">ladder1.png</frame>
+</animation>
+<blockkey>H</blockkey>
+</template>
+<template class = "MovingFlyingObject">
+<name>lightblock</name>
+<boundary x0 = "1.000000" x1 = "49.000000" y0 = "1.000000" y1 = "49.000000"/>
+<property>solid</property>
+<property>sticky</property>
+<property>unstoppable</property>
+<property>moving block</property>
+<animation name = "default">
+<frame repeat = "1">brick.jpg</frame>
+</animation>
+</template>
+<template class = "ThrowerObject">
+<name>monkey</name>
+<boundary x0 = "7.000000" x1 = "53.000000" y0 = "5.000000" y1 = "60.000000"/>
+<sound action = "die">squish.wav</sound>
+<property>heavy</property>
+<property>solid</property>
+<property>sticky</property>
+<property>unstoppable</property>
+<property>enemy</property>
+<animation name = "left">
+<frame repeat = "4">slmonkey.png</frame>
+<frame repeat = "4">slmonkey1.png</frame>
+<frame repeat = "4">slmonkey2.png</frame>
+<frame repeat = "4">slmonkey1.png</frame>
+</animation>
+<animation name = "right">
+<frame repeat = "4">srmonkey.png</frame>
+<frame repeat = "4">srmonkey1.png</frame>
+<frame repeat = "4">srmonkey2.png</frame>
+<frame repeat = "4">srmonkey1.png</frame>
+</animation>
+</template>
+<template class = "BlockObject">
+<name>soil</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "5.000000" y1 = "50.000000"/>
+<property>solid</property>
+<property>unstoppable</property>
+<animation name = "default">
+<frame repeat = "1">ssoil.png</frame>
+</animation>
+<blockkey>s</blockkey>
+</template>
+<template class = "BlockObject">
+<name>soil2</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "0.000000" y1 = "50.000000"/>
+<property>solid</property>
+<property>unstoppable</property>
+<animation name = "default">
+<frame repeat = "1">usoil.png</frame>
+</animation>
+<blockkey>q</blockkey>
+</template>
+<template class = "BlockObject">
+<name>spike</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "22.000000" y1 = "50.000000"/>
+<property>solid</property>
+<property>spikes</property>
+<animation name = "default">
+<frame repeat = "1">spikes2.png</frame>
+</animation>
+<blockkey>S</blockkey>
+</template>
+<template class = "EnemyGroundObject">
+<name>turtle</name>
+<boundary x0 = "5.000000" x1 = "40.000000" y0 = "5.000000" y1 = "44.000000"/>
+<sound action = "die">squish.wav</sound>
+<property>heavy</property>
+<property>solid</property>
+<property>sticky</property>
+<property>unstoppable</property>
+<property>enemy</property>
+<animation name = "dying">
+<frame repeat = "3">enemydying1s.png</frame>
+<frame repeat = "3">enemydying2s.png</frame>
+<frame repeat = "3">enemydying3s.png</frame>
+</animation>
+<animation name = "left">
+<frame repeat = "3">enemy1sl.png</frame>
+<frame repeat = "3">enemy2sl.png</frame>
+<frame repeat = "3">enemy3sl.png</frame>
+<frame repeat = "3">enemy4sl.png</frame>
+<frame repeat = "3">enemy2sl.png</frame>
+</animation>
+<animation name = "right">
+<frame repeat = "3">enemy1s.png</frame>
+<frame repeat = "3">enemy2s.png</frame>
+<frame repeat = "3">enemy3s.png</frame>
+<frame repeat = "3">enemy4s.png</frame>
+<frame repeat = "3">enemy2s.png</frame>
+</animation>
+</template>
+<template class = "BlockObject">
+<name>uwater</name>
+<layer>1</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "0.000000" y1 = "50.000000"/>
+<property>water</property>
+<animation name = "default">
+<frame repeat = "5">uwater.png</frame>
+<frame repeat = "5">uwater1.png</frame>
+<frame repeat = "5">uwater2.png</frame>
+</animation>
+<blockkey>W</blockkey>
+</template>
+<template class = "BlockObject">
+<name>uwaterfall</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "0.000000" y1 = "50.000000"/>
+<animation name = "default">
+<frame repeat = "5">uwfall.png</frame>
+<frame repeat = "5">uwfall1.png</frame>
+<frame repeat = "5">uwfall2.png</frame>
+<frame repeat = "5">uwfall3.png</frame>
+</animation>
+<blockkey>F</blockkey>
+</template>
+<template class = "BlockObject">
+<name>vine</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "19.000000" y1 = "50.000000"/>
+<property>climbable</property>
+<animation name = "default">
+<frame repeat = "1">svine.png</frame>
+</animation>
+<blockkey>v</blockkey>
+</template>
+<template class = "BlockObject">
+<name>vtree</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "0.000000" y1 = "50.000000"/>
+<property>solid</property>
+<property>unstoppable</property>
+<animation name = "default">
+<frame repeat = "1">wood.png</frame>
+</animation>
+<blockkey>t</blockkey>
+</template>
+<template class = "BlockObject">
+<name>water</name>
+<layer>1</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "10.000000" y1 = "50.000000"/>
+<property>water</property>
+<animation name = "default">
+<frame repeat = "5">water.png</frame>
+<frame repeat = "5">water1.png</frame>
+<frame repeat = "5">water2.png</frame>
+</animation>
+<blockkey>w</blockkey>
+</template>
+<template class = "BlockObject">
+<name>waterfall</name>
+<layer>0</layer>
+<boundary x0 = "0.000000" x1 = "50.000000" y0 = "0.000000" y1 = "50.000000"/>
+<animation name = "default">
+<frame repeat = "5">wfall.png</frame>
+<frame repeat = "5">wfall1.png</frame>
+<frame repeat = "5">wfall2.png</frame>
+<frame repeat = "5">wfall3.png</frame>
+</animation>
+<blockkey>f</blockkey>
+</template>
+<levelobject type = "lightblock" vx = "4.000000" vy = "0.000000" x = "9150.000000" y = "450.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "1050.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "1100.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "1150.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "1200.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "1250.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "1300.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "1350.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "2450.000000" y = "800.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "2650.000000" y = "550.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "2650.000000" y = "650.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "2650.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "2650.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "2850.000000" y = "800.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "3350.000000" y = "200.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "3400.000000" y = "200.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "3450.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "3450.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "3450.000000" y = "200.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "3500.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "3650.000000" y = "0.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "3800.000000" y = "250.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "3800.000000" y = "300.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "3950.000000" y = "50.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "3950.000000" y = "650.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4100.000000" y = "200.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4100.000000" y = "250.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4100.000000" y = "200.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "4350.000000" y = "150.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4450.000000" y = "100.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4500.000000" y = "100.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4550.000000" y = "100.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4600.000000" y = "100.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4700.000000" y = "100.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4750.000000" y = "100.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4800.000000" y = "100.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "4850.000000" y = "100.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "4900.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "5050.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "5100.000000" y = "200.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "5300.000000" y = "200.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "5550.000000" y = "200.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "5700.000000" y = "950.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "5800.000000" y = "950.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "5900.000000" y = "950.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "6050.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "6050.000000" y = "800.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "6150.000000" y = "950.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "6250.000000" y = "950.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "6350.000000" y = "950.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "player" vx = "0.000000" vy = "0.000000" x = "300.000000" y = "700.000000"/>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "6600.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "7100.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "7650.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "7850.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "8000.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "8200.000000" y = "500.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "8250.000000" y = "550.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "8300.000000" y = "550.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "8350.000000" y = "550.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "8400.000000" y = "550.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "8450.000000" y = "500.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "8500.000000" y = "500.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "8550.000000" y = "500.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "8600.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "8600.000000" y = "650.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "8850.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "8950.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "10250.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "10250.000000" y = "800.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "10300.000000" y = "800.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "10350.000000" y = "800.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "10400.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "10400.000000" y = "800.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "10600.000000" y = "800.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "10700.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "10850.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "11000.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "11150.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "11150.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "11200.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "11250.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "11300.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "11300.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "11500.000000" y = "400.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "14200.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "14400.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "14550.000000" y = "700.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "11800.000000" y = "450.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "12250.000000" y = "300.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "12300.000000" y = "750.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "12700.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "12800.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "12900.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "monkey" vx = "0.000000" vy = "0.000000" x = "14750.000000" y = "550.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "13000.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "manajar" vx = "0.000000" vy = "0.000000" x = "13100.000000" y = "850.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "2.000000" vy = "0.000000" x = "13300.000000" y = "250.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "turtle" vx = "-2.000000" vy = "0.000000" x = "13450.000000" y = "250.000000">
+<route>
+</route>
+</levelobject>
+<levelobject type = "flag" vx = "0.000000" vy = "0.000000" x = "15900.000000" y = "550.000000">
+<route>
+</route>
+</levelobject>
+</level>

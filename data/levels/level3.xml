@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<level>
+  <name></name>
+  <width>211</width>  <!--Size of level in tiles-->
+  <height>16</height>
+  <blocksize>50</blocksize> <!--Distance units per tile-->
+  <tilesize>40</tilesize> <!--Size of tiles in pixels-->
+  <background>newback2.png</background>
+  <music>Game1.mp3</music>
+  <layout>
+............................................................................................................................................................................................................L......
+..........................................j.....j....j......................................................................................................................................................L......
+.....................................................................................................................................................S......................................................L......
+................................jjj.jjj..\.........1.....1....1..............................111H1...11......1...1S.......................1...111...11.....1....111.1.......1............................H..L......
+...................................1.....1........................\11..............e.....e..122.H.........1S.....22...........1S.........12...........1\........................./FFFFFFFFFFFFF111.....11H11111....
+..........................e...e.FFF2FFF..........................................111111111112...H.........22.........1.1...1..21.1..S11..................................................................H...2.....
+.........................111H111\........./......j...jjj...j....................12....H.........H...................................12.........jjj.......................................................Hjjj2.....
+............................H..2...............................................12.....H.........H..........................................1S1...................1.......................................H...2.....
+............................H....................S.e.S.S.e.S..................12......H.....j...H........................................1H.221.e.1...1.....e...121.....e.....1H1........................H...2.....
+............................H................111121112121112111..1...1..1111112.......H...1.....H.....................................11..H...21112...2111111111222111111111112H21......................111111.....
+.....................jj.....H........1H11...12....................................1111H1111...1111...111SS.e.S.e..S1SS.S..eS1....111112...H....................................H.......................12..........
+.....................11.....H.......12H22SS122\.................................H1jjjj.jjjj1.1.jjj.....211111211111j11111111.1111222......H....................................H.....1................12...........
+...................................12.H..2222.........j.....j.....j.............H2jjjj.jjjj2.2................................jjj.........H....1...............................H.....2...............12............
+..............111.................12..e........1\..........................................2.2..e...1.e.....e.....e......e...........1....H...12......1..e.........e......e....111...2\..................../1......
+1111111111111122211100001100001S1S221111......111S11S11S11S11S11SS1SS1S1S1S1111112111SSS1111S11111111111111111111111111111111111111112S111111.2..1..S12111111111111111111111111222...21SSSSSSSSSSSSSSSSSSSS11111111
+222222222222222222221001221001222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222....2..222222222222222222222222222222...222222222222222222222222222222
+  </layout>
+
+  <template class = 'BlockObject'>
+    <name>block</name>
+    <boundary x0 = '0' y0 = '0' x1 = '50' y1 = '50'/>
+    <property>solid</property>
+    <property>unstoppable</property>
+    <animation name = 'default'>
+      <frame>brick1.png</frame>
+    </animation>
+    <blockkey>1</blockkey>
+  </template>
+
+  <template class = 'BlockObject'>
+    <name>block2</name>
+    <boundary x0 = '0' y0 = '0' x1 = '50' y1 = '50'/>
+    <property>solid</property>
+    <property>unstoppable</property>
+    <animation name = 'default'>
+      <frame>brick2.png</frame>
+    </animation>
+    <blockkey>2</blockkey>
+  </template>
+
+  <template class = 'BlockObject'>
+    <name>ladder</name>
+    <boundary x0 = '22' y0 = '0' x1 = '27' y1 = '50'/>
+    <property>climbable</property>
+    <animation name = 'default'>
+      <frame>ladder1.png</frame>
+    </animation>
+    <blockkey>H</blockkey>
+  </template>
+
+  <template class = 'BlockObject'>
+    <name>spike</name>
+    <boundary x0 = '0' y0 = '22' x1 = '50' y1 = '50'/>
+    <property>solid</property>
+    <property>spikes</property>
+    <animation name = 'default'>
+      <frame>spikes2.png</frame>
+    </animation>
+    <blockkey>S</blockkey>
+  </template>
+
+  <template class = 'BlockObject'>
+    <name>finish</name>
+    <boundary x0 = '0' y0 = '0' x1 = '50' y1 = '50'/>
+    <property>finish</property>
+    <blockkey>L</blockkey>
+  </template>
+
+  <template class = 'EnemyGroundObject'>
+    <name>turtle</name>
+    <boundary x0 = '5' y0 = '5' x1 = '40' y1 = '44'/>
+    <property>heavy</property>
+    <property>solid</property>
+    <property>sticky</property>
+    <property>unstoppable</property>
+    <property>enemy</property>
+    <sound action = "die">squish.wav</sound>
+
+    <animation name = 'right'>
+      <frame repeat = '3'>enemy1s.png</frame>
+      <frame repeat = '3'>enemy2s.png</frame>
+      <frame repeat = '3'>enemy3s.png</frame>
+      <frame repeat = '3'>enemy4s.png</frame>
+      <frame repeat = '3'>enemy2s.png</frame>
+    </animation>
+
+    <animation name = 'left'>
+      <frame repeat = '3'>enemy1sl.png</frame>
+      <frame repeat = '3'>enemy2sl.png</frame>
+      <frame repeat = '3'>enemy3sl.png</frame>
+      <frame repeat = '3'>enemy4sl.png</frame>
+      <frame repeat = '3'>enemy2sl.png</frame>
+    </animation>
+
+    <animation name = 'dying'>
+      <frame repeat = '3'>enemydying1s.png</frame>
+      <frame repeat = '3'>enemydying2s.png</frame>
+      <frame repeat = '3'>enemydying3s.png</frame>
+    </animation>
+
+  </template>
+
+  <template class = 'MovingFlyingObject'>
+    <name>lightblock</name>
+    <boundary x0 = '1' y0 = '1' x1 = '49' y1 = '49'/>
+    <property>solid</property>
+    <property>sticky</property>
+    <property>unstoppable</property>
+    <property>moving block</property>
+    <animation name = 'default'>
+      <frame>brick.jpg</frame>
+    </animation>
+  </template>
+
+  <template class = 'MovingGroundObject'>
+    <name>heavyblock</name>
+    <boundary x0 = '1' y0 = '1' x1 = '49' y1 = '49'/>
+    <property>solid</property>
+    <property>sticky</property>
+    <property>unstoppable</property>
+    <property>heavy</property>   waad
+    <animation name = 'default'>
+      <frame>brick.jpg</frame>
+    </animation>
+  </template>
+
+  <template class = 'FallingBlock'>
+    <name>fallingblock</name>
+    <boundary x0 = '1' y0 = '0' x1 = '49' y1 = '50'/>
+    <property>solid</property>
+    <property>unstoppable</property>
+    <animation name = 'default'>
+      <frame>brick.jpg</frame>
+    </animation>
+  </template>
+
+  <template class = 'MovingGroundObject'>
+    <name>flag</name>
+    <boundary x0 = '0' y0 = '0' x1 = '50' y1 = '50'/>
+    <property>finish</property>
+    <animation name = 'default'>
+      <frame>finish.png</frame>
+    </animation>
+  </template>
+
+<!--  Level layout starts here  -->
+
+  <levelobject type = 'player' x = '10150' y = '300' vx = '0' vy = '0'/>
+  
+
+  <levelobject type = 'manajar' x = '2100' y = '50' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '2400' y = '50' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '2650' y = '50' vx = '0' vy = '0'/>
+
+  <levelobject type = 'manajar' x = '1600' y = '150' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '1650' y = '150' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '1700' y = '150' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '1800' y = '150' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '1850' y = '150' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '1900' y = '150' vx = '0' vy = '0'/>
+
+  <!--<levelobject type = 'manajar' x = '4300' y = '250' vx = '0' vy = '0'/>-->
+
+  <levelobject type = 'manajar' x = '2450' y = '300' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '2650' y = '300' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '2700' y = '300' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '2750' y = '300' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '2950' y = '300' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '7150' y = '300' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '7200' y = '300' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '7250' y = '300' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '10100' y = '300' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '10150' y = '300' vx = '0' vy = '0'/>
+  <levelobject type = 'manajar' x = '10200' y = '300' vx = '0' vy = '0'/>
+
+  <levelobject type = 'manajar' x = '4600' y = '400' vx = '0' vy = '0'/>
+
+
+  <levelobject type = 'fallingblock' x = '1600' y = '250' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '1650' y = '250' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '1700' y = '250' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '1800' y = '250' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '1850' y = '250' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '1900' y = '250' vx = '0' vy = '0'/>
+
+  <levelobject type = 'fallingblock' x = '8900' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '8950' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9000' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9050' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9100' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9150' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9200' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9250' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9300' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9350' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9400' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9450' y = '200' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '9500' y = '200' vx = '0' vy = '0'/>
+
+  <levelobject type = 'lightblock'   x = '2500' y = '650' vx = '2' vy = '0'/>
+  <levelobject type = 'lightblock'   x = '2800' y = '650' vx = '-3' vy = '0'/>
+
+  <levelobject type = 'lightblock'   x = '3600' y = '550' vx = '3' vy = '0'/>
+  <levelobject type = 'lightblock'   x = '3200' y = '550' vx = '-4' vy = '0'/>
+  <levelobject type = 'lightblock'   x = '3800' y = '550' vx = '2' vy = '0'/>
+  <levelobject type = 'lightblock'   x = '3900' y = '550' vx = '-5' vy = '0'/>
+
+
+  <levelobject type = 'lightblock' x = '1600' y = '300' vx = '2' vy = '0'>
+    <route>
+      <point speed = '2' direction = '0' ticks = '250'/>
+      <point speed = '2' direction = '-90' ticks = '50'/>
+      <point speed = '2' direction = '0' ticks = '600'/>
+
+      <point speed = '2' direction = '180' ticks = '600'/>
+      <point speed = '2' direction = '90' ticks = '50'/>
+      <point speed = '2' direction = '180' ticks = '250'/>
+    </route>
+  </levelobject>
+<!--
+  <levelobject type = 'turtle' x = '2500' y = '550' vx = '-2' vy = '0'/>
+  <levelobject type = 'turtle' x = '2600' y = '550' vx = '2' vy = '0'/>
+  <levelobject type = 'turtle' x = '3250' y = '550' vx = '2' vy = '0'/>
+
+  <levelobject type = 'turtle' x = '3350' y = '180' vx = '2' vy = '0'>
+    <route speed = '2'>
+      <point x = '3251' y = '225'/>
+      <point x = '3549' y = '225'/>
+    </route>
+  </levelobject>
+
+  <levelobject type = 'turtle' x = '6250' y = '550' vx = '2' vy = '0'/>
+
+  <levelobject type = 'turtle' x = '6700' y = '550' vx = '2' vy = '0'/>
+  <levelobject type = 'turtle' x = '6850' y = '550' vx = '-2' vy = '0'/>
+  <levelobject type = 'turtle' x = '7900' y = '550' vx = '-2' vy = '0'>
+    <route speed = '2'>
+      <point x = '7651' y = '725'/>
+      <point x = '8100' y = '725'/>
+    </route>
+  </levelobject>
+-->
+</level>

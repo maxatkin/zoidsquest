@@ -1,0 +1,726 @@
+Making and Linking
+i586-mingw32msvc-g++ src/level.cpp       -c `sdl-config --cflags` `xml2-config --cflags`
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_algobase.h:65,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/algorithm:66,
+                 from src/level.cpp:21:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:79: error: `memcpy' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:80: error: `memmove
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:81: error: `strcpy' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:82: error: `strncpy
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:83: error: `strcat' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:84: error: `strncat
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:85: error: `memcmp' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:86: error: `strcmp' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:87: error: `strcoll
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:88: error: `strncmp
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:89: error: `strxfrm
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:90: error: `strcspn
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:91: error: `strspn' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:92: error: `strtok' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:93: error: `memset' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:94: error: `
+   strerror' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:95: error: `strlen' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:97: error: `memchr' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:103: error: `strchr
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:109: error: `
+   strpbrk' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:115: error: `
+   strrchr' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstring:121: error: `strstr
+   ' not declared
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_algobase.h:67,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/algorithm:66,
+                 from src/level.cpp:21:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:86: error: `div_t' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:87: error: `ldiv_t' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:89: error: `abort' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:90: error: `abs' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:91: error: `atexit' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:92: error: `atof' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:93: error: `atoi' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:94: error: `atol' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:95: error: `bsearch
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:96: error: `calloc' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:97: error: `div' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:98: error: `exit' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:99: error: `free' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:100: error: `getenv
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:101: error: `labs' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:102: error: `ldiv' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:103: error: `malloc
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:104: error: `mblen' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:105: error: `
+   mbstowcs' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:106: error: `mbtowc
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:107: error: `qsort' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:108: error: `rand' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:109: error: `
+   realloc' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:110: error: `srand' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:111: error: `strtod
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:112: error: `strtol
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:113: error: `
+   strtoul' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:114: error: `system
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:115: error: `
+   wcstombs' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:116: error: `wctomb
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:139: error: `
+   lldiv_t' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:145: error: `_Exit' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:156: error: syntax 
+   error before `(' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:157: error: syntax 
+   error before `.' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:157: error: syntax 
+   error before `.' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:160: error: syntax 
+   error before `(' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:161: error: syntax 
+   error before `.' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:161: error: syntax 
+   error before `.' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:172: error: `atoll' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:173: error: `
+   strtoll' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:174: error: `
+   strtoull' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:176: error: `strtof
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:177: error: `
+   strtold' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:178: error: syntax 
+   error before `}' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:183: error: `
+   lldiv_t' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:185: error: `_Exit' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:189: error: `div' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:190: error: `lldiv' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:192: error: `atoll' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:193: error: `strtof
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:194: error: `
+   strtoll' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:195: error: `
+   strtoull' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdlib:196: error: `
+   strtold' not declared
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/i586-mingw32msvc/bits/c++locale.h:41,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/iosfwd:46,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_algobase.h:70,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/algorithm:66,
+                 from src/level.cpp:21:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/clocale:58: error: `
+   setlocale' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/clocale:59: error: `
+   localeconv' not declared
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/iosfwd:47,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_algobase.h:70,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/algorithm:66,
+                 from src/level.cpp:21:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:68: error: `isalnum' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:69: error: `isalpha' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:70: error: `iscntrl' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:71: error: `isdigit' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:72: error: `isgraph' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:73: error: `islower' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:74: error: `isprint' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:75: error: `ispunct' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:76: error: `isspace' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:77: error: `isupper' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:78: error: `isxdigit
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:79: error: `tolower' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cctype:80: error: `toupper' 
+   not declared
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/i586-mingw32msvc/bits/c++io.h:35,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/fpos.h:44,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/iosfwd:49,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_algobase.h:70,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/algorithm:66,
+                 from src/level.cpp:21:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:100: error: `fpos_t' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:102: error: `
+   clearerr' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:103: error: `fclose' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:104: error: `feof' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:105: error: `ferror' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:106: error: `fflush' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:107: error: `fgetc' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:108: error: `fgetpos
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:109: error: `fgets' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:110: error: `fopen' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:111: error: `fprintf
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:112: error: `fputc' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:113: error: `fputs' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:114: error: `fread' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:115: error: `freopen
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:116: error: `fscanf' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:117: error: `fseek' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:118: error: `fsetpos
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:119: error: `ftell' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:120: error: `fwrite' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:121: error: `getc' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:122: error: `getchar
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:123: error: `gets' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:124: error: `perror' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:125: error: `printf' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:126: error: `putc' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:127: error: `putchar
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:128: error: `puts' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:129: error: `remove' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:130: error: `rename' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:131: error: `rewind' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:132: error: `scanf' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:133: error: `setbuf' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:134: error: `setvbuf
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:135: error: `sprintf
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:136: error: `sscanf' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:137: error: `tmpfile
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:138: error: `tmpnam' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:139: error: `ungetc' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:140: error: `
+   vfprintf' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:141: error: `vprintf
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:142: error: `
+   vsprintf' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:167: error: `
+   snprintf' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:168: error: `vfscanf
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:169: error: `vscanf' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:170: error: `
+   vsnprintf' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:171: error: `vsscanf
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:177: error: `
+   snprintf' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:178: error: `vfscanf
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:179: error: `vscanf' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:180: error: `
+   vsnprintf' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cstdio:181: error: `vsscanf
+   ' not declared
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cwchar:51,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/fpos.h:45,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/iosfwd:49,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_algobase.h:70,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/algorithm:66,
+                 from src/level.cpp:21:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/ctime:70: error: `clock' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/ctime:71: error: `difftime' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/ctime:72: error: `mktime' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/ctime:73: error: `time' not 
+   declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/ctime:74: error: `asctime' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/ctime:75: error: `ctime' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/ctime:76: error: `gmtime' 
+   not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/ctime:77: error: `localtime
+   ' not declared
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/ctime:78: error: `strftime' 
+   not declared
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/fpos.h:45,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/iosfwd:49,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_algobase.h:70,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/algorithm:66,
+                 from src/level.cpp:21:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/cwchar:71: error: `
+   mbstate_t' not declared
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/iosfwd:49,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_algobase.h:70,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/algorithm:66,
+                 from src/level.cpp:21:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/fpos.h:120: error: `
+   mbstate_t' was not declared in this scope
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/fpos.h:120: error: template
+   argument 1 is invalid
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/string:47,
+                 from src/level.h:4,
+                 from src/level.cpp:25:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:63: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:67: error: syntax
+   error before `;' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:68: error: syntax
+   error before `;' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:121: error: syntax
+   error before `;' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:122: error: syntax
+   error before `;' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h: In 
+   static member function `static int 
+   __c99::__c99::std::char_traits<char>::compare(const char*, const char*, 
+   unsigned int)':
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:139: error: `
+   memcmp' undeclared (first use this function)
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:139: error: (Each
+   undeclared identifier is reported only once for each function it appears 
+   in.)
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h: In 
+   static member function `static size_t 
+   __c99::__c99::std::char_traits<char>::length(const char*)':
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:143: error: `
+   strlen' undeclared (first use this function)
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h: In 
+   static member function `static const char* 
+   __c99::__c99::std::char_traits<char>::find(const char*, unsigned int, const 
+   char&)':
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:147: error: `
+   memchr' undeclared (first use this function)
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h: In 
+   static member function `static char* 
+   __c99::__c99::std::char_traits<char>::move(char*, const char*, unsigned int)
+   ':
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:151: error: `
+   memmove' undeclared (first use this function)
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h: In 
+   static member function `static char* 
+   __c99::__c99::std::char_traits<char>::copy(char*, const char*, unsigned int)
+   ':
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:155: error: `
+   memcpy' undeclared (first use this function)
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h: In 
+   static member function `static char* 
+   __c99::__c99::std::char_traits<char>::assign(char*, unsigned int, char)':
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:159: error: `
+   memset' undeclared (first use this function)
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h: At 
+   global scope:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:191: error: syntax
+   error before `;' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/char_traits.h:254: error: template
+   with C linkage
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:89,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/memory:55,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/string:48,
+                 from src/level.h:4,
+                 from src/level.cpp:25:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_threads.h: In 
+   member function `void __c99::__c99::std::_STL_mutex_lock::_M_initialize()':
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_threads.h:147: error: `
+   abort' undeclared (first use this function)
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/memory:55,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/string:48,
+                 from src/level.h:4,
+                 from src/level.cpp:25:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h: At global 
+   scope:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:128: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:225: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:263: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:334: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:458: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:464: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:637: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:650: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:655: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:704: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:711: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:716: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:733: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:746: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:754: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:792: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:801: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:808: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:814: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:826: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:832: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:837: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:842: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:886: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:897: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:908: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:916: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:926: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:939: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:947: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_alloc.h:957: error: template
+   with C linkage
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/memory:59,
+                 from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/string:48,
+                 from src/level.h:4,
+                 from src/level.cpp:25:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_raw_storage_iter.h:72: error: template
+   with C linkage
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_raw_storage_iter.h:72: error: syntax
+   error before `<' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_raw_storage_iter.h:81: error: syntax
+   error before `&' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_raw_storage_iter.h:84: error: syntax
+   error before `&' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_raw_storage_iter.h:91: error: `
+   _ForwardIterator' was not declared in this scope
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_raw_storage_iter.h:91: error: `
+   _Tp' was not declared in this scope
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_raw_storage_iter.h:91: error: syntax
+   error before `&' token
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_raw_storage_iter.h:98: error: `
+   _ForwardIterator' was not declared in this scope
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_raw_storage_iter.h:98: error: `
+   _Tp' was not declared in this scope
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stl_raw_storage_iter.h:99: error: syntax
+   error before `operator'
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/string:53,
+                 from src/level.h:4,
+                 from src/level.cpp:25:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:166: error: '
+   _Atomic_word' is used as a type, but is not defined as a type.
+In file included from /usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/string:57,
+                 from src/level.h:4,
+                 from src/level.cpp:25:
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h: In instantiation of `std::basic_string<char, std::char_traits<char>, std::allocator<char> >':
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:1061:   instantiated from here
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:114: error: invalid
+   use of undefined type `struct std::char_traits<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:52: error: declaration
+   of `struct std::char_traits<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:116: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:117: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:118: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:119: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:120: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:121: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:122: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:124: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:125: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:126: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:237: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h: In instantiation of `std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_Alloc_hider':
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:241:   instantiated from `std::basic_string<char, std::char_traits<char>, std::allocator<char> >'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:1061:   instantiated from here
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:241: error: base
+   class `std::allocator<char>' has incomplete type
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc: In instantiation of `std::basic_string<char, std::char_traits<char>, std::allocator<char> >':
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:1061:   instantiated from here
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:67: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:262: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:265: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:276: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:285: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:303: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:307: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:397: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:205: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:213: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:220: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:233: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:369: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:376: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:380: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:387: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:391: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:395: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:399: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:403: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:408: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:411: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:414: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:601: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:420: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:423: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:452: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:437: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:441: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:448: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:456: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:688: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:704: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:715: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:262: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.tcc:275: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:513: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:522: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:526: error: invalid
+   use of undefined type `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/stringfwd.h:49: error: declaration
+   of `struct std::allocator<char>'
+/usr/lib/gcc-lib/i586-mingw32msvc/3.3.1/include/c++/bits/basic_string.h:526: confused by earlier errors, bailing out
+make: *** [all] Error 1

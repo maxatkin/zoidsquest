@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<level>
+  <name></name>
+  <width>32</width>  <!--Size of level in tiles-->
+  <height>16</height>
+  <blocksize>50</blocksize> <!--Distance units per tile-->
+  <tilesize>40</tilesize> <!--Size of tiles in pixels-->
+  <background>arctis2.jpg</background>
+  <layout>
+...............................1
+...............................1
+...H111111111111111111111FFFFF11
+...H..................1.........
+...H..................1.........
+...H...........F11111H1.........
+...H.................H1.........
+...H......1..........H1.........
+...H..1...1.1.......111.........
+...1......1.....1111..L.........
+1111.....1.....11.....L.........
+1..11111H1111H11......L.........
+1.......H....H........L.........
+1.......H....H........LLLLPLLLLL
+1.......H.................1.....
+111111111111SSSS................
+  </layout>
+
+  <template class = 'BlockObject'>
+    <name>block</name>
+    <boundary x0 = '0' y0 = '0' x1 = '50' y1 = '50'/>
+    <property>solid</property>
+    <property>unstoppable</property>
+    <animation name = 'default'>
+      <frame>brick.jpg</frame>
+    </animation>
+    <blockkey>1</blockkey>
+  </template>
+
+  <template class = 'BlockObject'>
+    <name>ladder</name>
+    <boundary x0 = '22' y0 = '0' x1 = '27' y1 = '50'/>
+    <property>climbable</property>
+    <animation name = 'default'>
+      <frame>ladder1.png</frame>
+    </animation>
+    <blockkey>H</blockkey>
+  </template>
+
+  <template class = 'BlockObject'>
+    <name>spike</name>
+    <boundary x0 = '0' y0 = '22' x1 = '50' y1 = '50'/>
+    <property>solid</property>
+    <property>spikes</property>
+    <animation name = 'default'>
+      <frame>spikes.png</frame>
+    </animation>
+    <blockkey>S</blockkey>
+  </template>
+
+  <template class = 'EnemyGroundObject'>
+    <name>turtle</name>
+    <boundary x0 = '2' y0 = '7' x1 = '30' y1 = '50'/>
+    <property>heavy</property>
+    <property>solid</property>
+    <property>sticky</property>
+    <property>unstoppable</property>
+    <property>enemy</property>
+
+    <animation name = 'default'>
+      <frame>koopatroopa.png</frame>
+    </animation>
+  </template>
+
+  <template class = 'MovingFlyingObject'>
+    <name>lightblock</name>
+    <boundary x0 = '1' y0 = '1' x1 = '49' y1 = '49'/>
+    <property>solid</property>
+    <property>sticky</property>
+    <property>unstoppable</property>
+    <animation name = 'default'>
+      <frame>brick.jpg</frame>
+    </animation>
+  </template>
+
+  <template class = 'MovingGroundObject'>
+    <name>heavyblock</name>
+    <boundary x0 = '1' y0 = '1' x1 = '49' y1 = '49'/>
+    <property>solid</property>
+    <property>sticky</property>
+    <property>unstoppable</property>
+    <property>heavy</property>   waad
+    <animation name = 'default'>
+      <frame>brick.jpg</frame>
+    </animation>
+  </template>
+
+  <template class = 'FallingBlock'>
+    <name>fallingblock</name>
+    <boundary x0 = '1' y0 = '0' x1 = '49' y1 = '50'/>
+    <property>solid</property>
+    <property>unstoppable</property>
+    <animation name = 'default'>
+      <frame>brick.jpg</frame>
+    </animation>
+  </template>
+
+  <template class = 'BlockObject'>
+    <name>finish</name>
+    <boundary x0 = '0' y0 = '0' x1 = '50' y1 = '50'/>
+    <property>finish</property>
+    <blockkey>L</blockkey>
+  </template>
+
+  <template class = 'MovingGroundObject'>
+    <name>flag</name>
+    <boundary x0 = '0' y0 = '0' x1 = '50' y1 = '50'/>
+    <property>finish</property>
+    <animation name = 'default'>
+      <frame>finish.png</frame>
+    </animation>
+  </template>
+
+  <levelobject type = 'player' x = '300' y = '600' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' x = '750' y = '250' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' y = '100' x = '1250' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' y = '100' x = '1300' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' y = '100' x = '1350' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' y = '100' x = '1400' vx = '0' vy = '0'/>
+  <levelobject type = 'fallingblock' y = '100' x = '1450' vx = '0' vy = '0'/>
+  
+
+</level>

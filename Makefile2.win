@@ -1,0 +1,30 @@
+CC  = i586-mingw32msvc-g++
+BIN = game.exe
+
+all:
+	@echo "Making and Linking"
+	$(CC) src/level.cpp       -c `sdl-config --cflags` `xml2-config --cflags`^
+	$(CC) src/sound.cpp     -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/game.cpp        -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/objects.cpp     -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/hud.cpp     -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/spells.cpp     -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/text.cpp     -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/sprites.cpp     -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/parser.cpp      -c `xml2-config --cflags` `xml2-config --cflags`
+	$(CC) src/main.cpp        -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/SDLdraw.cpp     -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/werror.cpp      -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/input.cpp       -c `sdl-config --cflags` `xml2-config --cflags`
+	$(CC) src/io.cpp          -c `sdl-config --cflags` `xml2-config --cflags`
+
+	
+	$(CC) main.o game.o sound.o hud.o spells.o text.o SDLdraw.o werror.o input.o io.o objects.o level.o sprites.o parser.o -o $(BIN) -lmingw32 -lSDL_image -lSDL_mixer -lSDLmain -lSDL `xml2-config --libs`
+	
+	@rm -f src/*~
+
+clean:
+	@echo "Cleaning Up"
+	@rm -f *.o
+	@rm $(BIN)
+	@echo Done.
